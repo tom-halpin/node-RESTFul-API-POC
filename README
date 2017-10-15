@@ -42,3 +42,21 @@ git remote add origin https://github.com/tom-halpin/node-RESTFul-API-POC.git
 git push -u origin master
 
 need to authenticate user:tom.halpin@dxc.com pwd next team
+
+to verify
+
+change a file
+add it to staging : git add .
+ensure it is added: git status
+commit: git commit -m "comment"
+add to repo: git push origin master
+
+Docker Container
+
+create .Dockerfile init containter with node image and expose port
+create docker-compose.yml
+
+build containter : docker build -t restfulapi_v1 -f./.Dockerfile .
+verify image created : docker images 
+run image : docker run -it -p 1337:3000 restfulapi_v1
+call API: http://192.168.99.100:1337/v1/hello 
