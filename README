@@ -1,0 +1,23 @@
+To Run
+
+Start Server
+npm start or node app.js
+
+API
+http://localhost:3000/v1/hello
+http://localhost:3000/v1/helloGet
+http://localhost:3000/v1/hello/Tom
+
+http://localhost:3000/v1/contacts
+http://localhost:3000/v1/contacts/+359777123456
+
+http://localhost:3000/v1/groups
+http://localhost:3000/v1/groups/Dev
+
+To Test
+
+npm Test
+
+To See Coverage browse To
+
+coverage/lcov-report/index.html
