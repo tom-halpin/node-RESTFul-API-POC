@@ -21,3 +21,24 @@ npm Test
 To See Coverage browse To
 
 coverage/lcov-report/index.html
+
+To add to Git
+
+Create repo from an existing folder
+
+Add .gitignore to root folder
+Add README to root folderinit
+got to folder
+Type git init.
+Type git add to add the files to staging
+Type git commit -m "initial commit" to commit the files
+
+Connect to github - create New Repository 
+https://github.com/tom-halpin/node-RESTFul-API-POC 
+
+Push an existing repository from the command line
+
+git remote add origin https://github.com/tom-halpin/node-RESTFul-API-POC.git
+git push -u origin master
+
+need to authenticate user:tom.halpin@dxc.com pwd next team
