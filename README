@@ -59,4 +59,29 @@ create docker-compose.yml
 build containter : docker build -t restfulapi_v1 -f./.Dockerfile .
 verify image created : docker images 
 run image : docker run -it -p 1337:3000 restfulapi_v1
-call API: http://192.168.99.100:1337/v1/hello 
+call API: http://192.168.99.101:1337/v1/hello 
+
+publish container to docker hub
+
+docker login
+tag the image: docker tag restful-api-poc tomhalpin/restful-api-poc:v1
+push image to docker hub: docker push tomhalpin/restful-api-poc:v1
+view repo on docker hub: https://hub.docker.com/u/tomhalpin/
+
+Jenkins
+
+run jenkins from a container mapped to local folder
+
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v //c/Users/halpint/Downloads/jenkins/:/var/jenkins_home jenkins
+
+open jenkins
+
+http://192.168.99.101:8080
+
+admin and password
+
+go to update center : http://192.168.99.101:8080/updateCenter/
+
+download and install nodejs Jenkins plugin https://plugins.jenkins.io/nodejs
+
+force jenkins restart : http://192.168.99.101:8080/restart
