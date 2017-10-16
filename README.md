@@ -1,3 +1,35 @@
+## Synopsis
+
+Coming Soon -  a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+
+## Code Example
+
+Coming Soon -  Details what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+
+## Motivation
+
+Coming Soon - A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+
+## Installation
+
+Coming Soon - Provide code examples and explanations of how to get the project.
+
+## API Reference
+
+Coming Soon - Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+
+## Tests
+
+Coming Soon - Describe and show how to run the tests with code examples.
+
+## Contributors
+
+Coming Soon - Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+
+## License
+
+Coming Soon - A short snippet describing the license (MIT, Apache, etc.)
+
 ## To Run
 
 Start Server
@@ -21,6 +53,33 @@ npm Test
 To See Coverage browse To
 
 coverage/lcov-report/index.html
+
+## To Document
+
+ESDoc is a good documentation generator for JavaScript.
+https://esdoc.org/
+
+move to a your project directory
+cd your-project/
+
+install ESDoc and standard plugins
+npm install --save-dev esdoc esdoc-standard-plugin
+npm install --save-dev esdoc-brand-plugin
+npm install --save-dev esdoc-publish-html-plugin
+
+# write a configuration file -> root folder esdoc.json
+{
+  "source": ".",
+  "destination": "./docs",
+  "plugins": [{"name": "esdoc-standard-plugin"}],
+  "includes": ["^modules", "^test"]
+}
+
+# run ESDoc
+npm run doc or .\node_modules\.bin\esdoc -c .\esdoc.json
+
+# see a documentation
+open .\docs\index.html
 
 ## To add to Git
 

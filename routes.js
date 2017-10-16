@@ -1,10 +1,14 @@
+/**
+ * API router
+ */
 var contacts = require('./modules/contacts');
 var http = require('http');
 var url = require('url');
 var express = require('express');
 var router = express.Router();
-
-//hello name route
+/** 
+ *hello name route
+ */
 router.get('/v1/hello/:name', function(request, response) {
   response.send('Hello ' + request.params.name);
 });

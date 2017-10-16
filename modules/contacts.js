@@ -1,19 +1,50 @@
+/** 
+ * file system module reference
+ */
 var fs = require('fs');
+/**
+ * Contacts mock test class
+ * 
+ * @class contacts
+ */
+class contacts{
 
-function read_json_file()
+/**
+ * read mock data file contents
+ * 
+ * @static
+ * @returns 
+ * @memberof contacts
+ */
+static read_json_file()
 {
 	var file = './data/contacts.json';	
 	return fs.readFileSync(file);
 }
 
-exports.list = function()
+/**
+ * Read the contents of the mock file and parse the data with JSON.parse() to convert it a JavaScript object
+ * 
+ * @static
+ * @returns 
+ * @memberof contacts
+ */
+static list()
 {	
-	return JSON.parse(read_json_file());	
+	return JSON.parse(contacts.read_json_file());	
 };
 
-exports.query = function(number)
+/**
+ * query the mock file by primary contact number
+ * 
+ * @static
+ * @param {any} primarynumber 
+ * @returns 
+ * @memberof contacts
+ */
+static query(primarynumber)
 {	
-	var json = read_json_file();
+	var json = contacts.read_json_file();
 	var json_result = JSON.parse(json);
 	var result = json_result.result;
 	var ret = null;
@@ -21,7 +52,7 @@ exports.query = function(number)
 	{
 		var contact = result[i];
 		/* istanbul ignore else */
-		if (contact.primarycontactnumber === number)
+		if (contact.primarycontactnumber === primarynumber)
 		{
 			ret =  contact;
 			break;
@@ -30,9 +61,18 @@ exports.query = function(number)
 	return ret;
 };
 
-exports.query_by_arg = function(arg, value)
+/**
+ * query the mock file by the specified arg and value
+ * 
+ * @static
+ * @param {any} arg 
+ * @param {any} value 
+ * @returns 
+ * @memberof contacts
+ */
+static query_by_arg(arg, value)
 {
-	var json = read_json_file();
+	var json = contacts.read_json_file();
 	var json_result = JSON.parse(json);
 	var result = json_result.result;
 	var ret = null;
@@ -49,10 +89,17 @@ exports.query_by_arg = function(arg, value)
 	}
 	return ret;
 };	
-	
-exports.list_groups = function()
+
+/**
+ * query the mock file and return the defined groups
+ * 
+ * @static
+ * @returns 
+ * @memberof contacts
+ */
+static list_groups()
 {
-	var json = read_json_file();
+	var json = contacts.read_json_file();
 	var json_result = JSON.parse(json);
 	var result = json_result.result;
 	
@@ -72,9 +119,17 @@ exports.list_groups = function()
 	return resultArray;
 };
 
-exports.get_members = function(group_name)
+/**
+ * query the mock file groups by group name
+ * 
+ * @static
+ * @param {any} group_name 
+ * @returns 
+ * @memberof contacts
+ */
+static get_members(group_name)
 {
-	var json = read_json_file();
+	var json = contacts.read_json_file();
 	var json_result = JSON.parse(json);
 	var result = json_result.result;
 	
@@ -89,3 +144,6 @@ exports.get_members = function(group_name)
 	}
 	return resultArray;
 };
+}
+
+module.exports = contacts;
