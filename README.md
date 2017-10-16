@@ -1,9 +1,9 @@
-To Run
+## To Run
 
 Start Server
 npm start or node app.js
 
-API
+## API
 http://localhost:3000/v1/hello
 http://localhost:3000/v1/helloGet
 http://localhost:3000/v1/hello/Tom
@@ -14,7 +14,7 @@ http://localhost:3000/v1/contacts/+359777123456
 http://localhost:3000/v1/groups
 http://localhost:3000/v1/groups/Dev
 
-To Test
+## To Test
 
 npm Test
 
@@ -22,7 +22,7 @@ To See Coverage browse To
 
 coverage/lcov-report/index.html
 
-To add to Git
+## To add to Git
 
 Create repo from an existing folder
 
@@ -51,7 +51,7 @@ ensure it is added: git status
 commit: git commit -m "comment"
 add to repo: git push origin master
 
-Docker Container
+## Docker Container
 
 create .Dockerfile init containter with node image and expose port
 create docker-compose.yml
@@ -68,7 +68,7 @@ tag the image: docker tag restful-api-poc tomhalpin/restful-api-poc:v1
 push image to docker hub: docker push tomhalpin/restful-api-poc:v1
 view repo on docker hub: https://hub.docker.com/u/tomhalpin/
 
-Jenkins
+## Jenkins
 
 run jenkins from a container mapped to local folder
 
