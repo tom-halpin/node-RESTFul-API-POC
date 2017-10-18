@@ -10,7 +10,8 @@
     const app = require('../app.js'); // Our app
 
     //In a Mocha test, we describe our tests using the describe function,
-     describe('API endpoint /v1/contacts', function() {  
+    /** @test {contacts} */
+    describe('API endpoint /v1/contacts', function() {  
       this.timeout(5000); // How long to wait for a response (ms)
      
       //before and after blocks can be used to setup our tests before any testing begins, and cleanup after all tests have been completed.
@@ -25,6 +26,7 @@
       //individual test cases are implemented using the it function, which is where we insert our assertions.
       
       // GET - List all contacts
+      /** @test {contacts#list} */
       it('should return all contacts', function() {
         return chai.request(app)
           .get('/v1/contacts')
